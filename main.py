@@ -8,6 +8,8 @@ condition=True
 import random
 i=random.randint(0,len(data)-1)
 j=random.randint(0,len(data)-1)
+if i == j:
+  j=random.randint(0,len(data)-1)
 score=0
   
 def Calsocre():
@@ -26,11 +28,8 @@ while condition:
   os.system('cls')
   count_A=data[i]['follower_count']
   count_B=data[j]['follower_count']
-  if check=='A' and count_A == count_B:
-    i=j
-    j=random.randint(0,len(data)-1)
-    score=Calsocre()
-  elif check =='A' and count_A > count_B:
+  
+  if check =='A' and count_A > count_B:
     i=j
     j=random.randint(0,len(data)-1)
     score=Calsocre()
